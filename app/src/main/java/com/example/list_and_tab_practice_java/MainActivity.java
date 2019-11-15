@@ -29,23 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         MainListAdapter adapter = new MainListAdapter(this, titles);
 
-        ListView listView = (ListView) findViewById(R.id.listview);
+        ListView listView = findViewById(R.id.listview);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (view.getId()) {
-                    case R.id.main_list_row_text:
-                        Log.d("debug", "row: "+ String.valueOf(position));
-                        break;
-
-                }
-            }
-        });
+        listView.setOnItemClickListener(adapter);
     }
 }
 
-class MainListAdapter extends BaseAdapter {
+class MainListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
     private LayoutInflater inflater;
     private List<String> data;
@@ -56,6 +46,8 @@ class MainListAdapter extends BaseAdapter {
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data = data;
     }
+
+    // MARK:  BaseAdapter
 
     @Override
     public int getCount() {
@@ -75,9 +67,22 @@ class MainListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         String title = data.get(position);
+
         View listRow = inflater.inflate(R.layout.main_list_row, null);
+
+
         TextView titleLabel = listRow.findViewById(R.id.main_list_row_text);
         titleLabel.setText(title);
+
+
         return listRow;
+    }
+
+    // MARK: AdapterView.OnItemClickListener
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.d("debug", "row: "+ String.valueOf(position));
+
     }
 }
