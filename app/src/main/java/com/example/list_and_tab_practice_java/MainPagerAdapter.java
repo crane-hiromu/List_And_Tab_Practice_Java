@@ -3,6 +3,8 @@ package com.example.list_and_tab_practice_java;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import com.example.list_and_tab_practice_java.Fragments.MainPageListFragment;
+import com.example.list_and_tab_practice_java.Fragments.MainPageRecycleFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
 
@@ -28,9 +30,9 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MainPageFragment();
+                return new MainPageListFragment();
             case 1:
-                return new MainPageFragment();
+                return new MainPageRecycleFragment();
             default:
                 return null;
         }

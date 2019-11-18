@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_java;
+package com.example.list_and_tab_practice_java.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,22 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.list_and_tab_practice_java.R;
+import com.example.list_and_tab_practice_java.SubActivity;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class MainPageFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class MainPageListFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private static List<String> titles = Arrays.asList(new String[]{
             "hoge", "huga", "zozo", "hoge", "huga", "zozo", "hoge", "huga", "zozo"
     });
 
-    public MainPageFragment() {
+    public MainPageListFragment() {
 
     }
 
