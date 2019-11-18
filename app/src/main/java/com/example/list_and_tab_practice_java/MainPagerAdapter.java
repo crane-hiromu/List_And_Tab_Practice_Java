@@ -3,12 +3,12 @@ package com.example.list_and_tab_practice_java;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import com.example.list_and_tab_practice_java.Fragments.MainPageListFragment;
-import com.example.list_and_tab_practice_java.Fragments.MainPageRecycleFragment;
+import com.example.list_and_tab_practice_java.Fragments.List.MainListFragment;
+import com.example.list_and_tab_practice_java.Fragments.Recycle.MainRecycleFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
 
-    private CharSequence[] tabTitles = {"タブ1", "タブ2"};
+    private CharSequence[] tabTitles = {"list", "list+holder", "list+binding", "recycle"};
 
     public MainPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -30,9 +30,11 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MainPageListFragment();
             case 1:
-                return new MainPageRecycleFragment();
+            case 2:
+                return new MainListFragment(position);
+            case 3:
+                return new MainRecycleFragment();
             default:
                 return null;
         }

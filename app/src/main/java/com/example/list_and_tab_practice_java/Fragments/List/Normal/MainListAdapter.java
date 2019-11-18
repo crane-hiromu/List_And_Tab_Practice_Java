@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_java.Fragments;
+package com.example.list_and_tab_practice_java.Fragments.List.Normal;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.example.list_and_tab_practice_java.R;
-
 import java.util.List;
 
 public class MainListAdapter extends BaseAdapter {
@@ -16,14 +14,14 @@ public class MainListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<String> data;
 
-    MainListAdapter(Context context, List<String> data) {
+    public MainListAdapter(Context context, List<String> data) {
         super();
 
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data = data;
     }
 
-    // MARK:  BaseAdapter
+    // MARK: BaseAdapter
 
     @Override
     public int getCount() {
@@ -42,16 +40,10 @@ public class MainListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        View view = inflater.inflate(R.layout.main_list_row, null);
         String title = data.get(position);
-
-        View listRow = inflater.inflate(R.layout.main_list_row, null);
-
-
-        TextView titleLabel = listRow.findViewById(R.id.main_list_row_text);
+        TextView titleLabel = view.findViewById(R.id.main_list_row_text);
         titleLabel.setText(title);
-
-
-        return listRow;
+        return view;
     }
-
 }
