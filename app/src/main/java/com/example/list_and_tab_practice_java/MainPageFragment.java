@@ -1,5 +1,6 @@
 package com.example.list_and_tab_practice_java;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,7 +42,7 @@ public class MainPageFragment extends Fragment implements AdapterView.OnItemClic
 
         ListView listView = view.findViewById(R.id.main_page_fragment_list);
         listView.setAdapter(adapter);
-//        listView.setOnItemClickListener((AdapterView.OnItemClickListener) adapter);
+        listView.setOnItemClickListener(this);
     }
 
     // MARK: AdapterView.OnItemClickListener
@@ -50,5 +51,7 @@ public class MainPageFragment extends Fragment implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Log.d("debug", "row: "+ String.valueOf(position));
 
+        Intent intent = new Intent(this.getContext(), SubActivity.class);
+        startActivity(intent);
     }
 }
