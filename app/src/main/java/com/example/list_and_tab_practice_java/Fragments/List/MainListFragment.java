@@ -72,7 +72,7 @@ public class MainListFragment extends Fragment implements AdapterView.OnItemClic
 
         Intent intent = new Intent(this.getContext(), SubActivity.class);
         intent.putExtra(
-            "MainPageFragmentOnItemClick",
+            "MainListFragmentOnItemClick",
             "row: " +  String.valueOf(position)
         );
         startActivity(intent);

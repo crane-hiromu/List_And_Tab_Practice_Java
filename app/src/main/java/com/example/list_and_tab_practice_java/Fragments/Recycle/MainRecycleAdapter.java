@@ -2,6 +2,7 @@ package com.example.list_and_tab_practice_java.Fragments.Recycle;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,12 +14,14 @@ public class MainRecycleAdapter extends RecyclerView.Adapter<MainListRecycleView
 
     private LayoutInflater inflater;
     private List<String> data;
+    private MainRecycleOnClickListener listener;
 
-    public MainRecycleAdapter(Context context, List<String> data) {
+    public MainRecycleAdapter(Context context, List<String> data, MainRecycleOnClickListener listener) {
         super();
 
         this.inflater = LayoutInflater.from(context);
         this.data = data;
+        this.listener = listener;
     }
 
     // MARK: Adapter
@@ -35,9 +38,16 @@ public class MainRecycleAdapter extends RecyclerView.Adapter<MainListRecycleView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainListRecycleViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MainListRecycleViewHolder holder, final int position) {
         if (data.get(position) != null) {
             holder.textOfRow.setText(data.get(position));
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onRecycleClicked(v, position);
+            }
+        });
     }
 }

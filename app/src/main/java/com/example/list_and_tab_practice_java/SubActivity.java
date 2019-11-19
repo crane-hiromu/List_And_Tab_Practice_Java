@@ -16,7 +16,14 @@ public class SubActivity extends AppCompatActivity {
         Intent intent = this.getIntent();
         TextView textview = this.findViewById(R.id.sub_row_number);
 
-        // todo null check
-        textview.setText(intent.getStringExtra("MainPageFragmentOnItemClick"));
+        /// from list
+        if (intent.getStringExtra("MainListFragmentOnItemClick") != null) {
+            textview.setText(intent.getStringExtra("MainListFragmentOnItemClick"));
+        }
+
+        /// from recycle
+        if (intent.getStringExtra("MainRecycleFragmentOnRecycleClicked") != null) {
+            textview.setText(intent.getStringExtra("MainRecycleFragmentOnRecycleClicked"));
+        }
     }
 }
