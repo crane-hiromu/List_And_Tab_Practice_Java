@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.list_and_tab_practice_java.Fragments.List.Binding.MainListBindingAdapter;
 import com.example.list_and_tab_practice_java.Fragments.List.Holder.MainListWithHolderAdapter;
 import com.example.list_and_tab_practice_java.Fragments.List.Normal.MainListAdapter;
 import com.example.list_and_tab_practice_java.R;
@@ -54,6 +55,7 @@ public class MainListFragment extends Fragment implements AdapterView.OnItemClic
                 adapter = new MainListWithHolderAdapter(this.getContext(), titles);
                 break;
             case 2:
+                adapter = new MainListBindingAdapter(this.getContext(), titles);
                 break;
             default:
                 break;

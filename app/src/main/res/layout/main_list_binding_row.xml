@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="model" type="com.example.list_and_tab_practice_java.Fragments.List.Binding.MainListModel" />
+    </data>
+
+    <TextView
+        android:id="@+id/main_list_row_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="29dp"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:text="@{model.row}"/>
+
+</layout>
