@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_java.Fragments.Recycle;
+package com.example.list_and_tab_practice_java.fragments.recycle;
 
 import android.content.Context;
 import android.view.LayoutInflater;

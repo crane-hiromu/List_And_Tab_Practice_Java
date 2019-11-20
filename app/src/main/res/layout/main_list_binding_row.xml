@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable name="model" type="com.example.list_and_tab_practice_java.Fragments.List.Binding.MainListModel" />
+        <variable name="model" type="com.example.list_and_tab_practice_java.fragments.list.binding.MainListModel" />
     </data>
 
     <TextView

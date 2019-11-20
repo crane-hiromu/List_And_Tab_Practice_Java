@@ -1,20 +1,22 @@
-package com.example.list_and_tab_practice_java.Fragments.List.Normal;
+package com.example.list_and_tab_practice_java.fragments.list.binding;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+import androidx.databinding.DataBindingUtil;
 import com.example.list_and_tab_practice_java.R;
+import com.example.list_and_tab_practice_java.databinding.MainListBindingRowBinding;
+
 import java.util.List;
 
-public class MainListAdapter extends BaseAdapter {
+public class MainListBindingAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<String> data;
 
-    public MainListAdapter(Context context, List<String> data) {
+    public MainListBindingAdapter(Context context, List<String> data) {
         super();
 
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,10 +42,11 @@ public class MainListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = inflater.inflate(R.layout.main_list_row, null);
         String title = data.get(position);
-        TextView titleLabel = view.findViewById(R.id.main_list_row_text);
-        titleLabel.setText(title);
-        return view;
+        MainListModel model = new MainListModel(title); // todo list model
+
+        MainListBindingRowBinding binding = DataBindingUtil.inflate(inflater, R.layout.main_list_binding_row, parent, false);
+        binding.setModel(model);
+        return binding.getRoot();
     }
 }

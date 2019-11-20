@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_java.Fragments.List;
+package com.example.list_and_tab_practice_java.fragments.list;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.list_and_tab_practice_java.Fragments.List.Binding.MainListBindingAdapter;
-import com.example.list_and_tab_practice_java.Fragments.List.Holder.MainListWithHolderAdapter;
-import com.example.list_and_tab_practice_java.Fragments.List.Normal.MainListAdapter;
+import com.example.list_and_tab_practice_java.fragments.list.binding.MainListBindingAdapter;
+import com.example.list_and_tab_practice_java.fragments.list.holder.MainListWithHolderAdapter;
+import com.example.list_and_tab_practice_java.fragments.list.normal.MainListAdapter;
 import com.example.list_and_tab_practice_java.R;
 import com.example.list_and_tab_practice_java.SubActivity;
 

@@ -3,8 +3,8 @@ package com.example.list_and_tab_practice_java;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import com.example.list_and_tab_practice_java.Fragments.List.MainListFragment;
-import com.example.list_and_tab_practice_java.Fragments.Recycle.MainRecycleFragment;
+import com.example.list_and_tab_practice_java.fragments.list.MainListFragment;
+import com.example.list_and_tab_practice_java.fragments.recycle.MainRecycleFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
 

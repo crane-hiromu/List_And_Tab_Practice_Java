@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_java.Fragments.List.Holder;
+package com.example.list_and_tab_practice_java.fragments.list.holder;
 
 import android.widget.TextView;
 

@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_java.Fragments.List.Binding;
+package com.example.list_and_tab_practice_java.fragments.list.binding;
 
 public class MainListModel {
 
